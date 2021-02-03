@@ -16,6 +16,7 @@ def cvt_args2dict(args):
 
 
 if __name__ == '__main__':
+    # 控制台可输入参数
     args_dict = {'launch_mode': ['--launch_mode', None, str, '指定启动模式'],
                  'dataset_dir': ['--dataset_dir', None, str, '训练数据目录'],
                  'valid_dir': ['--valid_dir', None, str, '验证数据目录'],
@@ -34,6 +35,7 @@ if __name__ == '__main__':
     for args_key, args_list in args_dict.items():
         parser.add_argument(args_list[0], nargs='?', default=args_list[1], type=args_list[2], help=args_list[3])
     args = parser.parse_args()
+    # 转换控制台输入的参数为dict
     filled_settings = cvt_args2dict(args)
     runner = Launcher(filled_settings)
     runner.run()
