@@ -9,7 +9,7 @@ import datetime
 import matplotlib.pyplot as plt
 
 
-def Trainer(data_dir, yolo_net_file_path, epochs, batch_size, anchors, areas, is_new, interval, log_dir, save_loss_plot, plot_pause, plot_loss):
+def Trainer(data_dir, yolo_net_file_path, epochs, batch_size, anchors, areas, is_new, interval, log_dir, save_loss_plot, plot_pause, plot_loss, optimizer_name):
     print("[{}]网络训练程序启动中...".format(datetime.datetime.now()))
     print("**************************************************************")
     yolo_net_file_dir = "/".join(yolo_net_file_path.split("/")[:-1])
@@ -28,7 +28,12 @@ def Trainer(data_dir, yolo_net_file_path, epochs, batch_size, anchors, areas, is
         yolo = YoloTiny().to(device)
 
     yolo.train()
-    optimizer = opt.Adam(yolo.parameters())
+    if optimizer_name == "Adam":
+        optimizer = opt.Adam(yolo.parameters())
+    elif optimizer_name == "SGD":
+        optimizer = opt.SGD(yolo.parameters(), lr=1e-2)
+    else:
+        raise Exception("没有指定优化器！")
     loss_mse = nn.MSELoss()
 
     ave_loss = 1000.
@@ -41,7 +46,7 @@ def Trainer(data_dir, yolo_net_file_path, epochs, batch_size, anchors, areas, is
     print('* 使用中的设备 : {} | {}'.format(device.type, torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'None'))
     print('* 训练轮次 : {}'.format(epochs))
     print('* 批次大小 : {}'.format(batch_size))
-    print('* 优化器 : Adam')
+    print('* 优化器 : {}'.format(optimizer_name))
     print("**************************************************************")
     for epoch in range(epochs):
         sum_loss = 0.

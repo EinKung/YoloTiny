@@ -30,7 +30,8 @@ if __name__ == '__main__':
                  'plot_interval': ['--plot_interval', None, int, 'Loss画图的间隔'],
                  'save_loss_plot': ['--save_loss_plot', False, bool, '是否保存Loss画图'],
                  'plot_pause': ['--plot_pause', None, float, '画图暂定时长'],
-                 'plot_loss': ['--plot_loss', False, bool, '是否可视化Loss']}
+                 'plot_loss': ['--plot_loss', False, bool, '是否可视化Loss'],
+                 'optimizer': ['--optimizer', None, str, '优化器指定，默认为Adam']}
     parser = argparse.ArgumentParser(description='Hyperparams')
     for args_key, args_list in args_dict.items():
         parser.add_argument(args_list[0], nargs='?', default=args_list[1], type=args_list[2], help=args_list[3])

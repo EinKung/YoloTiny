@@ -15,5 +15,6 @@
   "plot_interval": 3,
   "save_loss_plot": false,
   "plot_pause": 0.001,
-  "plot_loss": false
+  "plot_loss": false,
+  "optimizer": "Adam"
 }

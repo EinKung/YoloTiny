@@ -53,7 +53,8 @@ def format_missing_settings():
       "plot_interval": 3,
       "save_loss_plot": False,
       "plot_pause": 0.001,
-      "plot_loss": False
+      "plot_loss": False,
+      "optimizer": "Adam"
     }
     with open(r'./config.json', 'a+') as f:
         json.dump(fixed_format_settings, f)

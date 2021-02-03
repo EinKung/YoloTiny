@@ -24,7 +24,8 @@ class Launcher:
                     self.settings['log_dir'],
                     self.settings['save_loss_plot'],
                     self.settings['plot_pause'],
-                    self.settings['plot_loss'])
+                    self.settings['plot_loss'],
+                    self.settings['optimizer'])
             print("[{}]程序完成".format(datetime.datetime.now()))
         elif self.settings['launch_mode'] == 'test':
             raise Exception("模式未实现！")
