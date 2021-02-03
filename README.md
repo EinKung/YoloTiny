@@ -21,6 +21,7 @@
             --save_loss_plot 是否保存loss画图（True or False）
             --plot_pause     画图的停留时间（默认为0.001，单位为秒）
             --plot_loss      是否loss画图（True or False）
+            --optimizer      指定优化器，默认为Adam（可选SGD）
 
 如何使用训练结果
 
@@ -42,7 +43,7 @@
     3. 关于返回数据
         
         图片上的目标位置
-        ndarray [[X, Y, W, H]]
+        ndarray [[IOU, X, Y, W, H]]
         
         分类结果
         ndarray [[1. 0. 0. 0. 0.]]
