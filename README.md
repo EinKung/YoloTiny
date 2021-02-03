@@ -21,6 +21,7 @@
             --save_loss_plot 是否保存loss画图（True or False）
             --plot_pause     画图的停留时间（默认为0.001，单位为秒）
             --plot_loss      是否loss画图（True or False）
+            --optimizer      指定优化器，默认为Adam（可选SGD）
 
 如何使用训练结果
 
