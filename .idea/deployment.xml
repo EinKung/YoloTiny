@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" autoUpload="Always" serverName="schbrain@192.168.5.175:22 password">
     <serverData>
       <paths name="algo_scan">
         <serverdata>
@@ -12,10 +12,11 @@
       <paths name="schbrain@192.168.5.175:22 password">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/schbrain/PycharmProjects/YoloTiny" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

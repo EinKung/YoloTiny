@@ -5,7 +5,9 @@ import datetime
 
 class Launcher:
     def __init__(self, settings=None):
+        # 初始化设置
         self.settings = init_settings()
+        # 有效化控制台输入的新设置
         self.check_new_settings(settings)
 
     def run(self):
@@ -25,7 +27,7 @@ class Launcher:
                     self.settings['plot_loss'])
             print("[{}]程序完成".format(datetime.datetime.now()))
         elif self.settings['launch_mode'] == 'test':
-            raise NotImplementedError
+            raise Exception("模式未实现！")
         else:
             raise Exception("启动模式错误！")
 
