@@ -41,7 +41,7 @@
     3. 关于返回数据
         
         图片上的目标位置
-        ndarray [[X, Y, W, H]]
+        ndarray [[IOU, X, Y, W, H]]
         
         分类结果
         ndarray [[1. 0. 0. 0. 0.]]
