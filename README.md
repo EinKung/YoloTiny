@@ -57,4 +57,5 @@
         ||------utils.py
         ||------yolo_tiny.py
         |-------eval.py
+        |-------config.json
         |-------utils.py
