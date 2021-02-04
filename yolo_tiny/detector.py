@@ -41,5 +41,7 @@ class Detector:
         w, h = anchors[boxType, 0] * torch.exp(vectors[:, 3]), anchors[boxType, 1] * torch.exp(vectors[:, 4])
         confi = vectors[..., 0]
         cls = vectors[..., 5:].T
-
-        return torch.stack([batch.float(), confi, cx, cy, w, h, *cls], dim=1)
+        try:
+            return torch.stack([batch.float(), confi, cx, cy, w, h, *cls], dim=1)
+        except Exception:
+            return torch.stack([batch.float(), confi, cx, cy, w, h], dim=1)
