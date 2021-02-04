@@ -47,3 +47,14 @@
         
         分类结果
         ndarray [[1. 0. 0. 0. 0.]]
+        
+    4. 如果需要在其他项目中使用，请务必带上以下文件
+    
+        |-------model
+        ||------yolo-tiny.pth
+        |-------yolo_tiny
+        ||------detector.py
+        ||------utils.py
+        ||------yolo_tiny.py
+        |-------eval.py
+        |-------utils.py
